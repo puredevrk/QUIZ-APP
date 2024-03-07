@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - Quiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Questions</h1>
+        <form action="/questions" method="post">
+            <p>Hello, {{ session['name'] }}!</p>
+            <p>Please answer the following questions:</p>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

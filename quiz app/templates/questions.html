@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>{{ question }}</h2>
+        <form action="/questions" method="post">
+            {% for option in options %}
+            <input type="radio" id="{{ option[0] }}" name="{{ question }}" value="{{ option[0] }}">
+            <label for="{{ option[0] }}">{{ option }}</label><br>
+            {% endfor %}
+            <button type="submit">Next</button>
+        </form>
+    </div>
+    <div id="timer"></div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App - Questions</title>
+  <link rel="stylesheet" href="/static/style.css">
+  
+</head>
+<body>
+  <div class="codigo">  <h1>CODIGO</h1> </div>
+  <div class="container">
+    <h2>{{ question }}</h2>
+    <form action="{{ url_for('quiz_questions', question_number=question_number) }}" method="post">
+      {% for option in options %}
+        <div class="radio-option">
+          <input type="radio" id="{{ option[0] }}" name="answer" value="{{ option[0] }}">
+          <label for="{{ option[0] }}">{{ option }}</label>
+        </div>
+      {% endfor %}
+      <button type="submit">Next</button>
+    </form>
+  </div>
+  <div id="timer"></div>
+</body>
+</html>
